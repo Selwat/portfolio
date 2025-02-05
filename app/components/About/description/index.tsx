@@ -3,7 +3,7 @@
 const Description = () => {
     return (
       <div className="w-full lg:w-1/3 h-full p-6 bg-none rounded-lg shadow-md text-white flex flex-col justify-center">
-        <h1 className="text-xl font-bold">Hi there 👋, I'm Mikołaj</h1>
+        <h1 className="text-xl font-bold">Hi there 👋, I m Mikołaj</h1>
         <p className="mt-2">
           I am a passionate Computer Science student with a keen interest in programming, particularly in frontend development.
           I enjoy creating user-friendly, responsive, and dynamic web applications that deliver a seamless experience.
