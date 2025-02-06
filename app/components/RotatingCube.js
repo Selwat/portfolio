@@ -1,0 +1,38 @@
+'use client'
+import { Canvas } from '@react-three/fiber'
+import { Suspense, useRef } from 'react'
+import { OrbitControls } from '@react-three/drei'
+
+function Cube() {
+  const meshRef = useRef()
+
+  return (
+    <mesh ref={meshRef}>
+      <boxGeometry args={[2, 2, 2]} />
+      <meshStandardMaterial color="#ff5722" />
+    </mesh>
+  )
+}
+
+const RotatingCube = () => {
+  return (
+    <Canvas
+      className="w-full h-full"
+      camera={{ position: [5, 5, 5], fov: 50 }}
+    >
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[10, 10, 5]} intensity={1} />
+      <Suspense fallback={null}>
+        <Cube />
+      </Suspense>
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        minPolarAngle={Math.PI / 2}
+        maxPolarAngle={Math.PI / 2}
+      />
+    </Canvas>
+  )
+}
+
+export default RotatingCube
