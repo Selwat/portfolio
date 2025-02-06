@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Ustawienia scrollbara dla html i body */
+html, body {
+  /* Dla Firefoxa */
+  scrollbar-width: thin;
+  scrollbar-color: #004f3b black;
+}
+
+/* Dla przeglądarek opartych na WebKit (Chrome, Edge, Safari) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: black; /* jasny szary */
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: #004f3b; /* szary */
+  border-radius: 1px;
+}
