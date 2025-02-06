@@ -7,7 +7,7 @@ import Model from "./Model"
 const ModelView = () => {
   return (
     <Canvas
-      camera={{ position: [5, 0, 7], fov: 75 }}
+      camera={{ position: [5, 0, 7], fov: 78 }}
       className="w-full h-full"
     >
       <Suspense fallback={null}>
