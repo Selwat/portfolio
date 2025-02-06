@@ -13,7 +13,7 @@ const About = () => {
   }
 
   return (
-    <div className="w-full h-screen p-4 md:p-10 flex flex-col items-center justify-between">
+    <div className="w-full h-full p-4 md:p-10 flex flex-col items-center xl:justify-between">
       <motion.div
         className="flex cursor-pointer"
         initial={{ opacity: 0 }}
@@ -22,7 +22,7 @@ const About = () => {
       >
         <motion.button
           onClick={scrollToSection}
-          className="bg-white text-gray-900 font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-lg border-2 border-gray-300 hover:bg-gray-200 transition-all duration-300 flex items-center gap-2"
+          className="bg-white text-gray-900 font-semibold px-4 md:px-6 py-2 rounded-full shadow-lg border-2 border-gray-300 hover:bg-gray-200 transition-all duration-300 flex items-center gap-2"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
@@ -35,9 +35,9 @@ const About = () => {
           </motion.span>
         </motion.button>
       </motion.div>
-      <div className="w-full h-auto md:h-screen p-4 md:p-10 flex flex-col lg:flex-row gap-6 items-center justify-between">
+      <div className="w-full h-auto md:h-full px-4 xl:px-10 flex flex-col xl:flex-row gap-6 items-center justify-between">
         <Description />
-        <div className="w-full lg:w-1/3 h-64 md:h-full">
+        <div className="w-full xl:w-1/3 min-h-[400px] h-1/3">
           <RotatingCube />
         </div>
         <TechLogos />

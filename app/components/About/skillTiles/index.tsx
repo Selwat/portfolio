@@ -12,7 +12,12 @@ const technologies = [
 
 const TechLogos = () => {
   return (
-    <div className="w-full lg:w-[400px] flex flex-wrap justify-center gap-6 p-4 md:p-8">
+    <motion.div
+    className="w-full xl:w-[400px] flex flex-wrap justify-center gap-6 p-4 md:p-8"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+  >
       {technologies.map((tech, index) => (
         <motion.div
           key={index}
@@ -40,7 +45,7 @@ const TechLogos = () => {
           </div>
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   )
 }
 

@@ -16,7 +16,7 @@ export default function Home() {
           <Title />
         </div>
       </div>
-      <div className="w-full h-auto">
+      <div className="w-full h-[100vh]">
         <About />
       </div>
     </div>
