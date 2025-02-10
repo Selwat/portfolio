@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import { motion } from "framer-motion"
 import Description from "./description"
 import TechLogos from "./skillTiles"
@@ -11,28 +11,30 @@ const About = () => {
       behavior: "smooth",
     })
   }
-  
+
   const scrollDown = () => {
-    const sections = document.querySelectorAll(".scroll-section");
-    const currentScroll = window.scrollY;
-    let nextSection = null;
-  
-    for (let section of sections) {
-      if (section.offsetTop > currentScroll + 10) { 
-        nextSection = section;
-        break;
+    const sections = Array.from(document.querySelectorAll(".scroll-section"))
+    const currentScroll = window.scrollY
+    let nextSection = null
+
+    for (const section of sections) {
+      if (
+        section instanceof HTMLElement &&
+        section.offsetTop > currentScroll + 10
+      ) {
+        nextSection = section
+        break
       }
     }
-  
+
     if (nextSection) {
       window.scrollTo({
         top: nextSection.offsetTop,
         behavior: "smooth",
-      });
+      })
     }
-  };
-  
-  
+  }
+
   return (
     <div className="w-full h-full p-4 md:p-10 flex flex-col items-center xl:justify-between">
       <motion.div
@@ -72,7 +74,6 @@ const About = () => {
         <motion.button
           onClick={scrollDown}
           className="bg-white text-gray-900 font-semibold px-4 md:px-6 py-2 rounded-full shadow-lg border-2 border-gray-300 hover:bg-gray-200 transition-all duration-300 flex items-center gap-2"
-
         >
           <span>Scroll Down</span>
           <motion.span
