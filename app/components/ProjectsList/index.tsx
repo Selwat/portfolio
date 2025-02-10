@@ -52,7 +52,7 @@ const Projects: React.FC = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="w-full p-6 bg-gray-800 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300"
+            className="w-full p-6 bg-gray-800 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 text-center"
           >
             <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
             <p className="text-gray-400">{project.description}</p>
