@@ -6,8 +6,8 @@ const Description = () => {
   return (
     <motion.div
       className="w-full xl:w-1/3 h-auto p-4 md:p-6 text-white flex flex-col justify-center"
-      initial={{ opacity: 0, x: -100 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: -100 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
     >
       <h1 className="text-xl md:text-2xl font-bold">

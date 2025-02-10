@@ -1,6 +1,7 @@
-import About from "./components/About";
-import { Title } from "./components/Header/title";
-import ModelView from "./components/ModelView";
+import About from "./components/About"
+import { Title } from "./components/Header/title"
+import ModelView from "./components/ModelView"
+import Projects from "./components/ProjectsList"
 
 export default function Home() {
   return (
@@ -12,13 +13,16 @@ export default function Home() {
         </div>
 
         {/* Napisy - na wierzchu, ale nie blokują interakcji */}
-        <div className="absolute top-0 left-0 z-10 text-white">
+        <div className="absolute top-0 left-0 z-10 text-white max-md:flex max-md:justify-center max-md:items-center max-md:w-full">
           <Title />
         </div>
       </div>
-      <div className="w-full h-[100vh]">
+      <div className="scroll-section w-full min-h-screen xl:h-screen">
         <About />
       </div>
+      <div className="scroll-section w-full min-h-screen">
+        <Projects />
+      </div>
     </div>
-  );
+  )
 }

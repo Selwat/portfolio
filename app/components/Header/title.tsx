@@ -60,16 +60,16 @@ export const Title = () => {
   }
 
   return (
-    <div className="w-full h-full flex flex-col items-center md:items-start md:justify-start  pl-20 pt-20">
+    <div className="w-full h-full md:items-start md:justify-start md:pl-20 md:pt-20">
       <h3
-        className={`w-full text-[38px] font-bold text-white max-md:w-full max-md:text-[42px] transition-opacity duration-100 ${
+        className={`w-full h-full text-[38px] font-bold text-white text-center max-md:text-[42px] transition-opacity duration-100 ${
           isAnimating ? "opacity-100" : "animate-fade-in"
         }`}
       >
         {displayText}
       </h3>
       <motion.div
-        className="flex w-full h-full justify-center lg:justify-start items-center cursor-pointer pointer-events"
+        className="flex w-full h-full justify-center md:justify-start items-center cursor-pointer pointer-events"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 2.5 }}
