@@ -5,38 +5,40 @@ import React from "react"
 interface Project {
   title: string
   description: string
+  status?: string
 }
 
 const projects: Project[] = [
   {
-    title: "Intranet dla centrali firmy",
+    title: "Company Headquarters Intranet",
     description:
-      "Platforma dla pracowników zawierająca dokumenty, aktualności i dzienne informacje.",
+      "An advanced internal platform for employees, providing access to documents, news, and daily operational information."
   },
   {
-    title: "System rozliczania kontrahentów",
+    title: "Contractor Settlement System",
     description:
-      "Wewnętrzny system rejestrujący zamówienia od kontrahentów, automatyczne sumowanie i rozliczanie.",
+      "A dedicated system for recording contractor orders, automatic settlement, and financial report generation."
   },
   {
-    title: "Panel zarządzania pakami i cenami",
-    description: "System do zarządzania pakami, ich cenami oraz dostępnością.",
+    title: "Package and Pricing Management Panel",
+    description: "An administrative module enabling comprehensive management of product packages, their pricing, and availability within the system."
   },
   {
-    title: "Intranet dla oddziałów",
+    title: "Branch Intranet",
     description:
-      "Rozszerzona wersja intranetu dla ponad 2500 oddziałów z funkcjami dla sklepów.",
+      "An extended version of the corporate intranet, providing operational support for over 2,500 branches with features tailored for the sales network."
   },
   {
-    title: "Panel zarządzania etykietami i oceną produktów",
+    title: "Label and Product Rating Management Panel",
     description:
-      "Platforma umożliwiająca zarządzanie etykietami produktów oraz ich oceną.",
+      "A system enabling efficient management of product labels and their ratings, supporting quality analysis and product marketing."
   },
   {
-    title: "Aplikacja do zarządzania stajnią",
+    title: "Stable Management Application",
     description:
-      "System do zarządzania rezerwacjami jazd, aktualnościami i akceptacją przez instruktorów.",
-  },
+      "A comprehensive tool for managing horseback riding reservations, communication with instructors, and publishing updates for customers.",
+    status: "In Progress"
+  }
 ]
 
 const Projects: React.FC = () => {
@@ -47,13 +49,18 @@ const Projects: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
     >
-      <h2 className="text-4xl font-bold text-center mb-12">Projekty</h2>
+      <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="w-full p-6 bg-gray-800 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 text-center"
+            className="relative w-full p-6 bg-gray-800 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 text-center"
           >
+            {project.status && (
+              <span className="absolute top-0 right-0 bg-yellow-500 text-black px-2 py-1 text-xs font-bold rounded-tr-2xl rounded-bl-md">
+                {project.status}
+              </span>
+            )}
             <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
             <p className="text-gray-400">{project.description}</p>
           </div>
