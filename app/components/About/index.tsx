@@ -2,7 +2,7 @@
 import { motion } from "framer-motion"
 import Description from "./description"
 import TechLogos from "./skillTiles"
-import RotatingCube from "../../components/RotatingCube"
+import ModelManView from "../ModelManView"
 
 const About = () => {
   const scrollUp = () => {
@@ -61,7 +61,7 @@ const About = () => {
       <div className="w-full h-1/3 md:h-full xl:px-10 flex flex-col xl:flex-row gap-6 items-center justify-between">
         <Description />
         <div className="w-full h-[600px] xl:w-1/3 xl:h-1/2 min-h-[500px] ">
-          <RotatingCube />
+          <ModelManView />
         </div>
         <TechLogos />
       </div>

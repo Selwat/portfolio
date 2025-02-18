@@ -1,21 +1,11 @@
 "use client"
 import { Canvas } from "@react-three/fiber"
-import { Suspense, useRef } from "react"
 import { OrbitControls } from "@react-three/drei"
+import { Suspense } from "react"
+import ModelMan from "./ModelMan"
 import { motion } from "framer-motion"
 
-function Cube() {
-  const meshRef = useRef()
-
-  return (
-    <mesh ref={meshRef}>
-      <boxGeometry args={[2, 2, 2]} />
-      <meshStandardMaterial color="#ff5722" />
-    </mesh>
-  )
-}
-
-const RotatingCube = () => {
+const ModelManView = () => {
   return (
     <motion.div
       className="w-full h-full"
@@ -25,14 +15,15 @@ const RotatingCube = () => {
     >
       <Canvas
         className="w-full h-full"
-        camera={{ position: [5, 5, 5], fov: 30 }}
+        camera={{ position: [0, 2, 5], fov: 30 }}
       >
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
         <Suspense fallback={null}>
-          <Cube />
+          <ModelMan />
         </Suspense>
         <OrbitControls
+          target={[0, 1, 0]}
           enableZoom={false}
           enablePan={false}
           minPolarAngle={Math.PI / 2}
@@ -43,4 +34,4 @@ const RotatingCube = () => {
   )
 }
 
-export default RotatingCube
+export default ModelManView
