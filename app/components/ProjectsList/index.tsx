@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import { motion } from "framer-motion"
 import React from "react"
 
@@ -12,34 +12,45 @@ const projects: Project[] = [
   {
     title: "Company Headquarters Intranet",
     description:
-      "An advanced internal platform for employees, providing access to documents, news, and daily operational information."
+      "An advanced internal platform for employees, providing access to documents, news, and daily operational information.",
   },
   {
     title: "Contractor Settlement System",
     description:
-      "A dedicated system for recording contractor orders, automatic settlement, and financial report generation."
+      "A dedicated system for recording contractor orders, automatic settlement, and financial report generation.",
   },
   {
     title: "Package and Pricing Management Panel",
-    description: "An administrative module enabling comprehensive management of product packages, their pricing, and availability within the system."
+    description:
+      "An administrative module enabling comprehensive management of product packages, their pricing, and availability within the system.",
   },
   {
     title: "Branch Intranet",
     description:
-      "An extended version of the corporate intranet, providing operational support for over 2,500 branches with features tailored for the sales network."
+      "An extended version of the corporate intranet, providing operational support for over 2,500 branches with features tailored for the sales network.",
   },
   {
     title: "Label and Product Rating Management Panel",
     description:
-      "A system enabling efficient management of product labels and their ratings, supporting quality analysis and product marketing."
+      "A system enabling efficient management of product labels and their ratings, supporting quality analysis and product marketing.",
   },
   {
     title: "Stable Management Application",
     description:
       "A comprehensive tool for managing horseback riding reservations, communication with instructors, and publishing updates for customers.",
-    status: "In Progress"
-  }
+    status: "In Progress",
+  },
 ]
+
+const scrollUp = () => {
+  const aboutSection = document.getElementById("about-me")
+  if (aboutSection) {
+    window.scrollTo({
+      top: aboutSection.offsetTop,
+      behavior: "smooth",
+    })
+  }
+}
 
 const Projects: React.FC = () => {
   return (
@@ -49,6 +60,20 @@ const Projects: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
     >
+      <motion.button
+        onClick={scrollUp}
+        className="hidden xl:flex mb-14 bg-white text-gray-900 font-semibold px-4 md:px-6 py-2 rounded-full shadow-lg border-2 border-gray-300 hover:bg-gray-200 transition-all duration-300 flex items-center gap-2"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <span>Scroll Up</span>
+        <motion.span
+          animate={{ y: [0, -5, 0] }}
+          transition={{ repeat: Infinity, duration: 1 }}
+        >
+          ⬆️
+        </motion.span>
+      </motion.button>
       <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (

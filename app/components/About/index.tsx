@@ -36,7 +36,7 @@ const About = () => {
   }
 
   return (
-    <div className="w-full h-full p-4 md:p-10 flex flex-col items-center xl:justify-between">
+    <div id="about-me" className="w-full h-full p-4 md:p-10 flex flex-col items-center xl:justify-between">
       <motion.div
         className="flex cursor-pointer"
         initial={{ opacity: 0 }}
