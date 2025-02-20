@@ -55,7 +55,7 @@ const scrollUp = () => {
 const Projects: React.FC = () => {
   return (
     <motion.div
-      className="scroll-section w-full h-auto bg-emerald-950 text-white py-16 px-8 flex flex-col justify-center items-center"
+      className="scroll-section w-full h-auto text-white py-16 px-8 flex flex-col justify-center items-center"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
