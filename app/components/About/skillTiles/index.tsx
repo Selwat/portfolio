@@ -13,7 +13,7 @@ const technologies = [
 const TechLogos = () => {
   return (
     <motion.div
-    className="w-full xl:w-[400px] flex flex-wrap justify-center gap-6 p-4 md:p-8"
+    className="w-full xl:w-1/3 flex flex-wrap justify-center gap-6 p-4 md:p-8"
     initial={{ opacity: 0, y: -100 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 1 }}
