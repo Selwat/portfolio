@@ -2,7 +2,7 @@
 import { motion } from "framer-motion"
 import Description from "./description"
 import TechLogos from "./skillTiles"
-import ModelManView from "../ModelManView"
+import ModelManView from "./model/ModelManView"
 
 const About = () => {
   const scrollUp = () => {
